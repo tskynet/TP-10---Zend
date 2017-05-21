@@ -1,0 +1,212 @@
+<?= $this->doctype() ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?= $this->headTitle('ZF Skeleton Application')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?= $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
+            ->prependStylesheet($this->basePath('css/style.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+        ?>
+
+        <!-- Scripts -->
+        <?= $this->headScript()
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery-3.1.0.min.js'))
+        ?>
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+        <link type="text/css" rel="stylesheet" href="font-awesome.css" />
+    </head>
+    <body onload="initialiserCarte()">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div class="background-fixed">
+            <div class="container background-red">
+                <div class="navbar-header">
+                    <a href="<?= $this->url('home') ?>">
+                        <img src="<?= $this->basePath('img/logo-full.jpg') ?>" alt="test"/>&nbsp;
+                        <?php
+
+                        ?>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse float-right">
+                    <ul class="nav navbar-nav">
+                      <?php
+                      foreach($menu as $m){
+                        ?>
+                        <li class="active"><a href="<?php echo $m['href'];?>"><?php echo $m['title'];?></a></li>
+                        <?php
+                      }
+                      ?>
+                    </ul>
+                </div>
+            </div>
+          </div>
+        </nav>
+        <div class="">
+            <?= $this->content ?>
+        </div>
+        <div class="arroundFooter">
+          <div class="container">
+              <footer>
+                <div class="barre-footer">
+                  <p>© 2013 <i>Motion Template</i>. Design by Begha</p>
+                  <div class="float-right">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-rss" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </footer>
+        </div>
+          <div class="map-google">
+            <div id="maCarte" style="width:100%;height:100%"></div>
+            <div class="contact">
+              <h2>Contact Us</h2>
+              <span>7oroof@7oroof.com</span>
+              <span>Your address goes here</span>
+            </div>
+            <div class="arrow-contact">
+
+            </div>
+          </div>
+        </div>
+        <?= $this->inlineScript() ?>
+        <script type="text/javascript" src="slick/slick.js"></script>
+        <script type="text/Javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="js/js.js"></script>
+        <script type="text/javascript">
+        var ville = [
+				{nom:'Paris',population:2244000000,longitude:2.333333,latitude:48.866667},
+				{nom:'Lille',population:227560,longitude:3.057256,latitude:50.62925},
+				{nom:'Lyon',population:484344,longitude:4.835659,latitude:45.764043},
+				{nom:'Marseille',population:850726,longitude:5.36978,latitude:43.296482}
+			];
+        $('.single-item').slick();
+
+        $('.slider2').slick({
+          dots: true,
+          infinite: false,
+          speed: 300,
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ]
+        });
+
+        $('.single-item2').slick();
+
+        $(".content1").click(function(){
+          $(".price1").css("background","rgb(235,79,78)");
+          $(".price2").css("background","rgb(97,97,97)");
+          $(".price3").css("background","rgb(97,97,97)");
+          $(".categorie1 h3").css("color","rgb(235,79,78)");
+          $(".categorie1 span").css("color","rgb(35,35,35)");
+          $(".categorie2 h3").css("color","rgb(97,97,97)");
+          $(".categorie2 span").css("color","rgb(235,79,78)");
+          $(".categorie3 h3").css("color","rgb(97,97,97)");
+          $(".categorie3 span").css("color","rgb(235,79,78)");
+
+        });
+        $(".content2").click(function(){
+          $(".price1").css("background","rgb(97,97,97)");
+          $(".price2").css("background","rgb(235,79,78)");
+          $(".price3").css("background","rgb(97,97,97)");
+          $(".categorie2 h3").css("color","rgb(235,79,78)");
+          $(".categorie2 span").css("color","rgb(35,35,35)");
+          $(".categorie1 h3").css("color","rgb(97,97,97)");
+          $(".categorie1 span").css("color","rgb(235,79,78)");
+          $(".categorie3 h3").css("color","rgb(97,97,97)");
+          $(".categorie3 span").css("color","rgb(235,79,78)");
+        });
+        $(".content3").click(function(){
+          $(".price1").css("background","rgb(97,97,97)");
+          $(".price2").css("background","rgb(97,97,97)");
+          $(".price3").css("background","rgb(235,79,78)");
+          $(".categorie3 h3").css("color","rgb(235,79,78)");
+          $(".categorie3 span").css("color","rgb(35,35,35)");
+          $(".categorie1 h3").css("color","rgb(97,97,97)");
+          $(".categorie1 span").css("color","rgb(235,79,78)");
+          $(".categorie2 h3").css("color","rgb(97,97,97)");
+          $(".categorie2 span").css("color","rgb(235,79,78)");
+        });
+
+    		function initialiserCarte(){
+    			if(!navigator.geolocation){
+    				alert("votre navigateur ne gère pas la géolocalisation");
+    				return false;
+    			}
+    			var centreGoogleMap = new google.maps.LatLng(48.0833, -1.6833);
+    			var optionsGoogleMap={
+    				zoom:8,
+    				center:centreGoogleMap,
+    				mapTypeId: google.maps.MapTypeId.ROADMAP
+    			}
+    			var maCarte = new google.maps.Map(document.getElementById("maCarte"),optionsGoogleMap);
+    			var imageMarqueurQuimper = "http://www.webline-services.com/img/logos/logo_linux.png";
+    			var marqueurQuimper = new google.maps.Marker({
+    				position:new google.maps.LatLng(48, -4.1),
+    				map : maCarte,
+    				icon: imageMarqueurQuimper
+    			});
+    			var listeVilles={};
+    			for (var i=0, il=ville.length;i<il;i++)
+    			{
+    				(function(i){
+    						listeVilles[ville[i].nom]={
+    						position : new google.maps.LatLng(ville[i].latitude, ville[i].longitude),
+    						population:ville[i].population
+    						}
+    				})(i);
+    			}
+    			new google.maps.Circle({
+    				strokeColor:"#FF0000",
+    				stroleOpacity:0.5,
+    				strokeWeight:2,
+    				fillColor:"#FF0000",
+    				fillOpacity:0.35,
+    				map:maCarte,
+    				center:listeVilles[ville[i].nom].position,
+    				radius:listeVilles[ville[i].nom].population /20
+    			});
+    		}
+
+
+        </script>
+    </body>
+</html>

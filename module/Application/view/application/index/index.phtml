@@ -1,0 +1,179 @@
+<!-- CONTENU DE LA PAGE HORS HEADER et MAYBE FOOTER-->
+<div class="arroundSlider">
+  <div class="container">
+    <div class="slider">
+      <div class="single-item">
+        <?php
+        foreach($slider1 as $slid1){
+        ?>
+        <div><img src="<?php echo $slid1['img']; ?>" alt="<?php echo $slid1['alt'];?>" /></div>
+
+        <?php
+        }
+        ?>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="arroundPurpose">
+  <div class="container">
+
+    <div class="row purpose">
+      <h2>Smart & Creative</h2>
+      <span>This is why you will use it :)</span>
+      <?php
+      foreach($purpose as $pur){
+      ?>
+      <div class="col-lg-4">
+        <img src="<?php echo $pur['img'];?>" alt="<?php echo $pur['alt'];?>" />
+        <h3><?php echo $pur['title'];?></h3>
+        <span><?php echo $pur['text'];?></span>
+      </div>
+      <?php
+      }
+      ?>
+    </div>
+  </div>
+</div>
+<div class="arroundTalent">
+  <div class="container">
+
+      <div class="row talent">
+        <h2>Talented & Experts</h2>
+        <span>This is our team :)</span>
+      <?php
+      foreach($grade as $p){
+      ?>
+        <div class="col-lg-3">
+          <div class="fiche">
+            <img src="<?php echo $p['img']; ?>" alt="<?php echo $p['alt'];?>" />
+            <span class="name"><?php echo $p['name'];?></span>
+            <span class="grade"><?php echo $p['grade'];?></span>
+            <a href="<?php echo $p['link']?>" class="link-twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Follow</a>
+          </div>
+        </div>
+      <?php
+      }
+      ?>
+      </div>
+  </div>
+</div>
+
+<div class="arroundSlider2">
+  <div class="container slider-elegant">
+    <h2>Elegant & Genuine</h2>
+    <span>This is how our works looks like :)</span>
+
+    <div data-slick='{"slidesToShow": 4, "slidesToScroll": 4}' class="slider2">
+      <?php
+      foreach($slider2 as $slid2){
+      ?>
+      <div><img src="<?php echo $slid2['img'];?>" alt="<?php echo $slid2['alt'];?>" /><span><?php echo $slid2['text'];?></span></div>
+      <?php
+      }
+      ?>
+    </div>
+  </div>
+  <div class="container categorie">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="content content1 categorie1">
+          <h3>Start Up</h3>
+          <span>For beginners</span>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="content content2 categorie2">
+          <h3>Standart</h3>
+          <span>More than what you have dreamed with</span>
+          <span class="bite"></span>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="content content3 categorie3">
+          <h3>Professional</h3>
+          <span>For smart people</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="arroundChoice">
+  <div class="container">
+    <div class="row choice">
+      <div class="col-lg-4">
+        <div class="content content1">
+          <ul>
+            <li>Basic pages</li>
+            <li>MySQL Databases</li>
+            <li>Bandwith</li>
+            <li>Storage space</li>
+          </ul>
+          <div class="price price1">
+            <span><sub class="sub">$</sub><b>15</b>/mo</span>
+            <button>Order</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="content content2">
+          <ul>
+            <li>Basic pages</li>
+            <li>MySQL Databases</li>
+            <li>Bandwith</li>
+            <li>Storage space</li>
+          </ul>
+          <div class="price price2">
+            <span><sub class="sub">$</sub><b>25</b>/mo</span>
+            <button>Order</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="content content3">
+          <ul>
+            <li>Basic pages</li>
+            <li>MySQL Databases</li>
+            <li>Bandwith</li>
+            <li>Storage space</li>
+          </ul>
+          <div class="price price3">
+            <span><sub class="sub">$</sub><b>35</b>/mo</span>
+            <button>Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#">And more available plans for all needs .... Check here</a>
+  </div>
+</div>
+
+<div class="arroundSlider3">
+
+  <div class="container">
+    <div class="slider3">
+      <div class="single-item2">
+        <?php
+        foreach($slider3 as $slid3){
+        ?>
+        <div><img src="<?php echo $slid3['img'];?>" alt="<?php echo $slid3['alt'];?>" /></div>
+        <?php
+        }
+        ?>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+<!--
+
+
+
+-->

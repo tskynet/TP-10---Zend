@@ -1,0 +1,44 @@
+<div class="arroundTeam">
+  <div class="container">
+    <div class="row">
+
+      <?php
+      if($idpage==0){
+        foreach($teampage as $p){
+      ?>
+        <div class="col-lg-4">
+          <a href="<?php echo 'http://zend.dev/team/'.$p['id'];?>"><img src="<?php echo $p['img'];?>" alt="<?php echo $p['alt'];?>" /></a>
+          <h4>Age : <?php echo $p['age'];?>, <?php echo $p['city'];?></h4>
+          <p><?php echo $p['description'];?></p>
+          <h3><?php echo $p['poste'];?></h3>
+        </div>
+      <?php
+        }
+      }
+      if($idpage!=0){
+        $i=0;
+        foreach($teampage as $p){
+          if($idpage == $p['id']){
+            ?>
+              <div class="col-lg-4">
+                <a href="http://zend.dev/team"><img src="<?php echo '../'.$p['img'];?>" alt="<?php echo $p['alt'];?>" /></a>
+                <h4>Age : <?php echo $p['age'];?>, <?php echo $p['city'];?></h4>
+                <p><?php echo $p['description'];?></p>
+                <h3><?php echo $p['poste'];?></h3>
+              </div>
+            <?php
+            $i++;
+          }
+        }
+        if($i!=1){
+          ?>
+          <h3>Erreur ! la personne que vous chercher n'existe pas ou plus ! </h3>
+          <span>Voilà ce qu'il ce passe lorsque l'on se balade seul en fôret la nuit...</span>
+          <?php
+        }
+      }
+      ?>
+
+    </div>
+  </div>
+</div>
